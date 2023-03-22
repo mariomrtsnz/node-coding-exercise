@@ -1,0 +1,27 @@
+{
+  "name": "coding-exercise",
+  "version": "1.0.0",
+  "description": "Knack - Take home exercise. Coding test.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage --runInBand --detectOpenHandles",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariomrtsnz/node-coding-exercise.git"
+  },
+  "author": "Mario Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariomrtsnz/node-coding-exercise/issues"
+  },
+  "homepage": "https://github.com/mariomrtsnz/node-coding-exercise#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
