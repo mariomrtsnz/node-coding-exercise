@@ -1,0 +1,299 @@
+{
+  "_id": "61e8666b010a37023e3d99a3",
+  "versions": [
+    {
+      "_id": "61e8666b010a37023e3d99a4",
+      "status": "live",
+      "objects": [
+        {
+          "inflections": { "singular": "Product", "plural": "Products" },
+          "connections": { "inbound": [], "outbound": [] },
+          "user": false,
+          "status": "current",
+          "tasks": [],
+          "type": "StandardObject",
+          "_id": "61e869d51137bc002545fedc",
+          "name": "Products",
+          "fields": [
+            {
+              "type": "short_text",
+              "required": true,
+              "unique": false,
+              "user": false,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e869d51137bc002545fede",
+              "key": "field_1",
+              "name": "Products Name"
+            },
+            {
+              "type": "auto_increment",
+              "required": false,
+              "unique": false,
+              "user": false,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e869d51137bc002545fedf",
+              "name": "Product ID",
+              "key": "field_2"
+            },
+            {
+              "type": "image",
+              "required": false,
+              "unique": false,
+              "user": false,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e869d51137bc002545fee0",
+              "name": "Image",
+              "format": { "source": "upload", "thumbs": [] },
+              "key": "field_3"
+            }
+          ],
+          "template": "product",
+          "key": "object_1",
+          "identifier": "field_1"
+        },
+        {
+          "inflections": { "singular": "Account", "plural": "Accounts" },
+          "connections": { "inbound": [], "outbound": [] },
+          "name": "Accounts",
+          "user": true,
+          "status": "current",
+          "tasks": [],
+          "type": "UserObject",
+          "_id": "61e869e11137bc002545fee5",
+          "profile_key": "all_users",
+          "fields": [
+            {
+              "type": "name",
+              "required": true,
+              "unique": false,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e869e11137bc002545fee7",
+              "name": "Name",
+              "format": { "format": "First Last" },
+              "immutable": true,
+              "key": "field_7"
+            },
+            {
+              "type": "email",
+              "required": true,
+              "unique": true,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e869e11137bc002545fee8",
+              "name": "Email",
+              "format": { "text_format": "url", "label": "" },
+              "immutable": true,
+              "key": "field_8"
+            },
+            {
+              "type": "password",
+              "required": true,
+              "unique": true,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e869e11137bc002545fee9",
+              "name": "Password",
+              "format": null,
+              "immutable": true,
+              "key": "field_9"
+            },
+            {
+              "type": "multiple_choice",
+              "required": true,
+              "unique": false,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e869e11137bc002545feea",
+              "name": "User Status",
+              "format": {
+                "options": ["active", "inactive", "pending approval"],
+                "default": "active"
+              },
+              "immutable": true,
+              "key": "field_10"
+            },
+            {
+              "type": "user_roles",
+              "required": false,
+              "unique": false,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e869e11137bc002545feeb",
+              "name": "User Roles",
+              "immutable": true,
+              "key": "field_11"
+            }
+          ],
+          "key": "object_2",
+          "identifier": "field_7"
+        },
+        {
+          "inflections": { "singular": "Manager", "plural": "Managers" },
+          "connections": { "inbound": [], "outbound": [] },
+          "name": "Managers",
+          "user": true,
+          "status": "current",
+          "tasks": [],
+          "type": "UserObject",
+          "_id": "61e86a121137bc002545fef0",
+          "fields": [
+            {
+              "type": "name",
+              "required": true,
+              "unique": false,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e86a121137bc002545fef2",
+              "name": "Name",
+              "format": { "format": "First Last" },
+              "immutable": true,
+              "key": "field_12"
+            },
+            {
+              "type": "email",
+              "required": true,
+              "unique": true,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e86a121137bc002545fef3",
+              "name": "Email",
+              "format": { "text_format": "url", "label": "" },
+              "immutable": true,
+              "key": "field_13"
+            },
+            {
+              "type": "password",
+              "required": true,
+              "unique": true,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e86a121137bc002545fef4",
+              "name": "Password",
+              "format": null,
+              "immutable": true,
+              "key": "field_14"
+            },
+            {
+              "type": "multiple_choice",
+              "required": true,
+              "unique": false,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e86a121137bc002545fef5",
+              "name": "User Status",
+              "format": {
+                "options": ["active", "inactive", "pending approval"],
+                "default": "active"
+              },
+              "immutable": true,
+              "key": "field_15"
+            },
+            {
+              "type": "user_roles",
+              "required": false,
+              "unique": false,
+              "user": true,
+              "conditional": false,
+              "rules": [],
+              "validation": [],
+              "_id": "61e86a121137bc002545fef6",
+              "name": "User Roles",
+              "immutable": true,
+              "key": "field_16"
+            }
+          ],
+          "template": "",
+          "key": "object_3",
+          "profile_key": "profile_3",
+          "identifier": "field_12"
+        }
+      ],
+      "scenes": [
+        {
+          "groups": [{ "columns": [{ "keys": ["view_4"], "width": 100 }] }],
+          "_id": "61e8666b010a37023e3d99a5",
+          "name": "Home",
+          "slug": "home",
+          "key": "scene_1",
+          "views": [
+            {
+              "columns": [],
+              "links": [
+                { "name": "Products", "type": "scene", "scene": "products" },
+                { "name": "Orders", "type": "scene", "scene": "orders" }
+              ],
+              "inputs": [],
+              "_id": "61e86a5d1137bc002545ff11",
+              "groups": [],
+              "format": "none",
+              "label": "Menu",
+              "name": "Menu",
+              "type": "menu",
+              "title": "",
+              "description": "",
+              "source": {
+                "criteria": { "match": "all", "rules": [], "groups": [] },
+                "limit": "",
+                "sort": [],
+                "type": "database"
+              },
+              "key": "view_4"
+            }
+          ],
+          "parent": "home-login"
+        },
+        {
+          "groups": [],
+          "_id": "61e86a411137bc002545ff0d",
+          "name": "Home Login",
+          "parent": null,
+          "object": null,
+          "type": "authentication",
+          "views": [
+            {
+              "columns": [],
+              "links": [],
+              "inputs": [],
+              "_id": "61e86a411137bc002545ff0e",
+              "name": "Login Form",
+              "title": "Login",
+              "type": "login",
+              "description": "Enter your email address and password to login.",
+              "limit_profile_access": false,
+              "allowed_profiles": [],
+              "registration_type": "closed",
+              "key": "view_3"
+            }
+          ],
+          "key": "scene_3",
+          "slug": "home-login"
+        }
+      ]
+    }
+  ]
+}
