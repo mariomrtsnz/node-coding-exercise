@@ -60,34 +60,38 @@ const runDupRemover = (mockFilePath, newFilePath) => {
     const jsonMockData = utils.readFileAndParseJson(mockFilePath);
 
     if (jsonMockData) {
-      const originalObjects = jsonMockData?.versions?.[0]?.objects || [];
-      const originalScenes = jsonMockData?.versions?.[0]?.scenes || [];
+      if (Array.isArray(jsonMockData?.versions)) {
+        const originalObjects = jsonMockData?.versions?.[0]?.objects || [];
+        const originalScenes = jsonMockData?.versions?.[0]?.scenes || [];
 
-      const cleanObjects = removeDuplicates(
-        "key",
-        originalObjects,
-        "fields",
-        "key"
-      );
-      const cleanScenes = removeDuplicates(
-        "key",
-        originalScenes,
-        "views",
-        "key"
-      );
+        const cleanObjects = removeDuplicates(
+          "key",
+          originalObjects,
+          "fields",
+          "key"
+        );
+        const cleanScenes = removeDuplicates(
+          "key",
+          originalScenes,
+          "views",
+          "key"
+        );
 
-      const cleanMockData = {
-        ...jsonMockData,
-        versions: [
-          {
-            ...jsonMockData?.versions?.[0],
-            objects: cleanObjects,
-            scenes: cleanScenes,
-          },
-        ],
-      };
+        const cleanMockData = {
+          ...jsonMockData,
+          versions: [
+            {
+              ...jsonMockData?.versions?.[0],
+              objects: cleanObjects,
+              scenes: cleanScenes,
+            },
+          ],
+        };
 
-      utils.jsonStringifyAndWriteFile(cleanMockData, newFilePath);
+        utils.jsonStringifyAndWriteFile(cleanMockData, newFilePath);
+      } else {
+        throw Error("Wrong JSON format");
+      }
     }
   } catch (error) {
     console.error(`There was an error with the main process: ${error}`);
