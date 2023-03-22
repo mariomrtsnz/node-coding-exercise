@@ -1,7 +1,7 @@
 const fs = require("fs");
 const dupRemover = require("../app/dupRemover.js");
 const utils = require("../app/utils.js");
-const mockFilePath = "assets/mocks/mock_application.json";
+const mockFilePath = "assets/mocks/test_mock_application.json";
 
 describe("Knack Application Schema Sanitizer", () => {
   test("readFileAndParseJson should read and return a JSON object from a filepath with the correct schema", () => {
@@ -105,7 +105,7 @@ describe("Knack Application Schema Sanitizer", () => {
   });
 
   test("runDupRemover should fail to remove duplicate objects given a wrong obj", () => {
-    const wrongMockFilePath = "assets/mocks/wrong_mock_application.json";
+    const wrongMockFilePath = "assets/mocks/test_wrong_mock_application.json";
     const newFilePath = "results/test/test_clean_application_2.json";
     dupRemover.runDupRemover(wrongMockFilePath, newFilePath);
     const cleanTestObj = utils.readFileAndParseJson(newFilePath);
@@ -113,7 +113,8 @@ describe("Knack Application Schema Sanitizer", () => {
   });
 
   test("runDupRemover should fail to remove duplicate objects given an incomplete obj", () => {
-    const wrongMockFilePath = "assets/mocks/wrong_mock_application_2.json";
+    const wrongMockFilePath =
+      "assets/mocks/test_incomplete_mock_application.json";
     const newFilePath = "results/test/test_clean_application_3.json";
     dupRemover.runDupRemover(wrongMockFilePath, newFilePath);
     const cleanTestObj = utils.readFileAndParseJson(newFilePath);
